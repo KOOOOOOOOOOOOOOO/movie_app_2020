@@ -1,17 +1,22 @@
 import React from 'react';
 
-function Food({ fav }) {
-  return <h1>I like {fav} </h1>;
+function Food({ name }) {
+  return <h1>I like {name} </h1>;
 }
+
+const FoodILike = [
+  {
+    name : "Coffee"
+
+  },
+  {
+    name : "Sandwich"
+  }]
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <Food fav="Coffe"/>
-      <Food fav="Pasta"/>
-      <Food fav="Basil"/>
-      <Food fav="Croassant"/>
+      {FoodILike.map(dish => <Food name={dish.name}/>)}
     </div>
   );
 }
