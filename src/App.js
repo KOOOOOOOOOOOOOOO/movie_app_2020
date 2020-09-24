@@ -6,17 +6,20 @@ function Food({ name }) {
 
 const FoodILike = [
   {
+    id : 1,
     name : "Coffee"
-
   },
   {
+    id : 2,
     name : "Sandwich"
   }]
 
-function App() {
+  function App() {
   return (
     <div>
-      {FoodILike.map(dish => <Food name={dish.name}/>)}
+      {FoodILike.map(dish => (
+        <Food key={dish.id} name={dish.name}/>
+      ))}
     </div>
   );
 }
